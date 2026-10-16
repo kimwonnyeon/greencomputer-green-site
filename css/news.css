@@ -1,0 +1,23 @@
+.news-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+.news-wrap li{
+    padding: 1%;
+    width: calc((100% - 6%)/4);
+    background-color: beige;
+}
+.pic{
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+.pic img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.news-wrap li h3{
+    padding: 2% 0;
+}
