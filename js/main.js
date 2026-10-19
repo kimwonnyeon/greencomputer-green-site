@@ -3,6 +3,15 @@ const proSwiper = new Swiper(".productSwiper", {
   slidesPerView: 3,
   spaceBetween: 24,
   loop: true,
+  //페이지네이션
+  pagination:{
+    el: ".product .swiper-pagination",
+  },
+  // 네비게이션(좌우 화살표)
+navigation:{
+  nextEl:".productSwiper .swiper-button-next",
+  prevEl:".productSwiper .swiper-button-prev",
+},
   // 반응형
   breakpoints: {
     0: {
@@ -21,11 +30,19 @@ const proSwiper = new Swiper(".productSwiper", {
 });
 // 모바일 메뉴
 const hambar = document.querySelector(".hamburger");
-const mbMenu = document.querySelector("#mobile-menu")
-const overlay=document.querySelector(".over-lay");
-hambar.addEventListener("click", ()=>{
-   mbMenu.classList.toggle("active");
-   overlay.classList.toggle("active");
-   hambar.classList.toggle("active");
-
-})
+const mbMenu = document.querySelector("#mobile-menu");
+const overlay = document.querySelector(".over-lay");
+hambar.addEventListener("click", () => {
+  mbMenu.classList.add("active");
+  overlay.classList.add("active");
+  hambar.classList.add("active");
+  // 스크롤 방지
+  document.body.style.overflow = "hidden";
+});
+overlay.addEventListener("click", () => {
+  mbMenu.classList.remove("active");
+  overlay.classList.remove("active");
+  hambar.classList.remove("active");
+  // 스크롤 생성
+  document.body.style.overflow = "";
+});

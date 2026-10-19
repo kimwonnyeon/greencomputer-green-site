@@ -8,16 +8,47 @@
   .nav {
     display: none;
   }
-  .hamburger{
+  .hamburger {
     display: flex;
   }
-  .news-wrap li{
-    width: calc((100% - 2%)/3);
+  /* 햄버거 메뉴 클릭시 X변경 */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .hamburger.active span:nth-child(2) {
+    display: none;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg);
+  }
+  .news-wrap li {
+    width: calc((100% - 2%) / 2);
+  }
+  /* 하단 */
+  .upper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  section .inner {
+    padding: 60px 0;
   }
 }
-@media (max-width:480px){
-  .news-wrap li{
+@media (max-width: 480px) {
+  .news-wrap li {
     width: 100%;
+    margin-bottom: 20px;
+  }
+  .section .inner {
+    padding: 60px 0;
+  }
+  .upper {
+    padding-bottom: 20px;
+  }
+  .lower {
+    margin-top: 20px;
+  }
+  .product .swiper-button-prev,
+  .product .swiper-button-next {
+    display: none;
   }
 }
-
